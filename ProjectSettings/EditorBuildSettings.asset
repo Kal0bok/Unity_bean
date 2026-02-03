@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MR.Bean_room.unity
     guid: 1acc96886d913e04bb0b0144e45c93a3
+  - enabled: 1
+    path: Assets/Scenes/TV.unity
+    guid: 430721c63f74c3b40b392041e2181685
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
