@@ -12,6 +12,6 @@ Testa projekts, kas demonstrē Unity UI elementu lietojumu par tēmu "MR. Bīns"
 - [x] Audio source lietojums
 - [x] Riggid body un collider lietojums
 - [x] Projekta sagatavošana Windows OS
-- [ ] Izveidot galvenās izvēlnes ainu (paši)
-- [ ] Izveidot TV ainu (paši)
+- [x] Izveidot galvenās izvēlnes ainu 
+- [x] Izveidot TV ainu 
 - [ ] Integrēt virtuļu ķeršanas spēli
