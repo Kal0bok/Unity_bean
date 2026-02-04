@@ -62,4 +62,4 @@ Interaktīvs mācību projekts, kas izstrādāts Unity vidē. Projekta galvenais
 
 ---
 
-© 2024 Izstrādāts ar mīlestību pret Unity un virtuļiem. 🍩
+© 2026 Izstrādāts ar Unity un virtuļiem palidzību. 🍩
