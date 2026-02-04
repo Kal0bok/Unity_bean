@@ -37,7 +37,7 @@ Interaktīvs mācību projekts, kas izstrādāts Unity vidē. Projekta galvenais
 - [x] **TV Scene** — Tematiskā TV vide.
 
 ### Nākotnes plāni
-- [ ] **Virtuļu ķeršanas spēle** — Mini-spēles integrācija.
+- [x] **Virtuļu ķeršanas spēle** — Mini-spēles integrācija.
 - [ ] **Windows OS Optimization** — Gala build sagatavošana un testēšana.
 
 ---
