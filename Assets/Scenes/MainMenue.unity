@@ -671,14 +671,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 732084803}
         m_TargetAssemblyTypeName: SceneChangerScript, Assembly-CSharp
-        m_MethodName: Transition
-        m_Mode: 1
+        m_MethodName: LoadWithDelay
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MR.Bean_room
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &732084801
@@ -731,7 +731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33569c0121e9b94dae26900bafea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 2
 --- !u!1 &743962328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,14 +1112,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1726970242}
         m_TargetAssemblyTypeName: SceneChangerScript, Assembly-CSharp
-        m_MethodName: Transition
-        m_Mode: 1
+        m_MethodName: LoadWithDelay
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI_scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1726970240
@@ -1173,7 +1172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33569c0121e9b94dae26900bafea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNumber: 1
 --- !u!1 &1748600253
 GameObject:
   m_ObjectHideFlags: 0
