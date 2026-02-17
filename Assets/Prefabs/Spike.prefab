@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2486919449594821082}
   - component: {fileID: 7774980522056065579}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: Spike
   m_TagString: Donut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6301429047446442448, guid: d4cbee6594d90cc4d8a2a3361bbe0adf, type: 3}
+  m_Sprite: {fileID: 1422110341182125066, guid: 012be8099bedbfd40a97578a1778d3ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
