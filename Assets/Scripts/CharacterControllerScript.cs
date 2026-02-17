@@ -3,13 +3,20 @@ using UnityEngine.InputSystem;
 
 public class CharacterControllerScript : MonoBehaviour
 {
-    public float moveSpeed = 1f;
+    public float moveSpeed = 5f;
+    public float jumpForce = 7f;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private float moveInput;
 
-   
+    [Header("Ground Check Settings")]
+    public Transform groundCheck;
+    public float checkRadius = 0.2f;
+    public LayerMask whatIsGround;
+    private bool isGrounded;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,23 +24,29 @@ public class CharacterControllerScript : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+
         moveInput = 0;
-        
-        if(Keyboard.current.leftArrowKey.isPressed)
+        if (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)
         {
             moveInput = -1;
         }
-        else if(Keyboard.current.rightArrowKey.isPressed)
+        else if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)
         {
             moveInput = 1;
         }
 
-        animator.SetBool("isWalking", moveInput != 0);
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
 
-        if(moveInput > 0)
+        animator.SetBool("isWalking", moveInput != 0);
+        animator.SetBool("isGrounded", isGrounded);
+
+        if (moveInput > 0)
         {
             spriteRenderer.flipX = false;
         }
@@ -45,6 +58,6 @@ public class CharacterControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + new Vector2(moveInput * moveSpeed * Time.deltaTime, 0));
+        rb.MovePosition(rb.position + new Vector2(moveInput * moveSpeed * Time.fixedDeltaTime, 0));
     }
 }
