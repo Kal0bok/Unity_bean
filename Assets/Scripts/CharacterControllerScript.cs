@@ -1,63 +1,40 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class CharacterControllerScript : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 7f;
+    public float speed = 5f;
+    public float jumpForce = 10f;
+    public LayerMask groundLayer;
+    public Transform groundCheck;
 
     private Rigidbody2D rb;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private float moveInput;
-
-    [Header("Ground Check Settings")]
-    public Transform groundCheck;
-    public float checkRadius = 0.2f;
-    public LayerMask whatIsGround;
     private bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        // 1. Горизонтальное движение
+        float moveInput = Input.GetAxisRaw("Horizontal"); // Получаем -1, 0 или 1
+        rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
 
-        moveInput = 0;
-        if (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)
-        {
-            moveInput = -1;
-        }
-        else if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)
-        {
-            moveInput = 1;
-        }
+        // 2. Проверка земли (маленький невидимый круг под ногами)
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        // 3. Прыжок
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
-        animator.SetBool("isWalking", moveInput != 0);
-        animator.SetBool("isGrounded", isGrounded);
-
-        if (moveInput > 0)
+        // Поворот спрайта (опционально)
+        if (moveInput != 0)
         {
-            spriteRenderer.flipX = false;
+            // Оставляем Y и Z такими, какие они есть в Инспекторе
+            transform.localScale = new Vector3(Mathf.Sign(moveInput), transform.localScale.y, transform.localScale.z);
         }
-        else if (moveInput < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + new Vector2(moveInput * moveSpeed * Time.fixedDeltaTime, 0));
     }
 }
