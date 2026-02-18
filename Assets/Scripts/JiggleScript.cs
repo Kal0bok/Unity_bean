@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using UnityEngine;
+using RangeAttribute = UnityEngine.RangeAttribute;
 
-public class JiggleScript : MonoBehaviour
+public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Range(0f, 1f)]
     public float power = 0.5f;
@@ -9,12 +11,12 @@ public class JiggleScript : MonoBehaviour
     public bool jigglePosition = true;
     public Vector2 positionJigAmount;
     [Range(0f, 100f)]
-    public float postionFrequency = 10f;
+    public float positionFrequency = 10f;
     float positionTimer;
     Vector2 basePosition;
 
     [Header("Rotation Jiggler")]
-    public bool jiggleRotation = true;
+    public bool jiggleRotaton = true;
     public Vector3 rotationJigAmount;
     [Range(0f, 100f)]
     public float rotationFrequency = 10f;
@@ -30,40 +32,38 @@ public class JiggleScript : MonoBehaviour
     Vector2 baseScale;
 
 
-    void Start()
+    private void Start()
     {
         basePosition = transform.localPosition;
         baseRotation = transform.localRotation;
         baseScale = transform.localScale;
     }
 
-    void Update()
+    private void Update()
     {
         if (jigglePosition)
         {
-            positionTimer += Time.deltaTime * postionFrequency;
+            positionTimer += Time.deltaTime * positionFrequency;
             Vector2 offset = new Vector2(
                 Mathf.Sin(positionTimer) * positionJigAmount.x,
-                Mathf.Cos(positionTimer) * positionJigAmount.y
-            );
+                Mathf.Cos(positionTimer) * positionJigAmount.y);
+            
             transform.localPosition = basePosition + offset * power;
-        }
 
-        if (jiggleRotation)
+        }
+        if(jigglePosition)
         {
             rotationTimer += Time.deltaTime * rotationFrequency;
             Vector3 offset = new Vector3(
                 Mathf.Sin(rotationTimer) * rotationJigAmount.x,
                 Mathf.Cos(rotationTimer) * rotationJigAmount.y,
-                Mathf.Sin(rotationTimer) * rotationJigAmount.z
-            );
-            transform.localRotation = baseRotation * Quaternion.Euler(offset * power);
+                Mathf.Sin(rotationTimer) * rotationJigAmount.z);
         }
-
         if (jiggleScale)
         {
             scaleTimer += Time.deltaTime * scaleFrequency;
             transform.localScale = baseScale + scaleJigAmount * Mathf.Sin(scaleTimer) * power;
         }
     }
+
 }
