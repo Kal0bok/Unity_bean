@@ -3242,7 +3242,7 @@ GameObject:
   - component: {fileID: 966552723}
   - component: {fileID: 966552722}
   - component: {fileID: 966552721}
-  - component: {fileID: 966552720}
+  - component: {fileID: 966552724}
   m_Layer: 5
   m_Name: Name_button (1)
   m_TagString: Untagged
@@ -3270,18 +3270,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1305, y: -630}
   m_SizeDelta: {x: 250, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &966552720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966552718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f33569c0121e9b94dae26900bafea36c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &966552721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3326,7 +3314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 966552720}
+      - m_Target: {fileID: 966552724}
         m_TargetAssemblyTypeName: SceneChangerScript, Assembly-CSharp
         m_MethodName: LoadWithDelay
         m_Mode: 5
@@ -3376,6 +3364,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966552718}
   m_CullTransparentMesh: 1
+--- !u!114 &966552724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966552718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33569c0121e9b94dae26900bafea36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &982795552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,7 +3999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024912934, y: 677}
+  m_AnchoredPosition: {x: -0.00024912934, y: 676.99994}
   m_SizeDelta: {x: 0, y: 910}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1188611152
@@ -5305,16 +5305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb8047dfdd787042941df6ad62a89ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.5
-  jigglePosition: 1
-  positionJigAmount: {x: 0.1, y: 0}
-  postionFrequency: 1
-  jiggleRotation: 0
-  rotationJigAmount: {x: 0, y: 0, z: 0}
-  rotationFrequency: 10
-  jiggleScale: 1
-  scaleJigAmount: {x: 0.1, y: 0.1}
-  scaleFrequency: 2
 --- !u!1 &1404638840
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,9 +5337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad91451118bd3f42bb136d64131bb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 123081460}
-  textField: {fileID: 1564096342}
-  reverseTextToggle: {fileID: 862703565}
 --- !u!4 &1404638842
 Transform:
   m_ObjectHideFlags: 0
@@ -5377,19 +5364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de43512db1ce8f48be3375db3a2acaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bean: {fileID: 745997991}
-  teddy: {fileID: 1469660802}
-  car: {fileID: 719378485}
-  granny: {fileID: 1300976808}
-  toggleLeft: {fileID: 1416837548}
-  toggleRight: {fileID: 982795552}
-  characterImage: {fileID: 1660552282}
-  characterSprites:
-  - {fileID: -8726641784090280262, guid: 990116b84e182494295937b24784d8e1, type: 3}
-  - {fileID: -3569658643155153432, guid: 6134be39b653b4547a6d8f246ebe8d95, type: 3}
-  - {fileID: 376567822532919934, guid: 22f612d0f7e79004c9b5c2379bdd48c2, type: 3}
-  sizeSlider: {fileID: 1895542803}
-  rotationSlider: {fileID: 449036796}
 --- !u!114 &1404638844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6922,8 +6896,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1672490205}
   m_HandleRect: {fileID: 1672490204}
   m_Direction: 2
-  m_Value: 0.000000045077662
-  m_Size: 0.25604275
+  m_Value: 0.00000020284949
+  m_Size: 0.25597835
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7833,16 +7807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb8047dfdd787042941df6ad62a89ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.5
-  jigglePosition: 0
-  positionJigAmount: {x: 0, y: 0}
-  postionFrequency: 10
-  jiggleRotation: 0
-  rotationJigAmount: {x: 0, y: 0, z: 0}
-  rotationFrequency: 10
-  jiggleScale: 1
-  scaleJigAmount: {x: 0.4, y: 0.1}
-  scaleFrequency: 4
 --- !u!1 &1874007379
 GameObject:
   m_ObjectHideFlags: 0
@@ -9317,16 +9281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb8047dfdd787042941df6ad62a89ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.28
-  jigglePosition: 1
-  positionJigAmount: {x: 1, y: 0}
-  postionFrequency: 4.7
-  jiggleRotation: 1
-  rotationJigAmount: {x: 0, y: 0, z: 0}
-  rotationFrequency: 10
-  jiggleScale: 1
-  scaleJigAmount: {x: 0.2, y: 0.2}
-  scaleFrequency: 1
 --- !u!1 &2089361393
 GameObject:
   m_ObjectHideFlags: 0
